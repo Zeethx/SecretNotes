@@ -9,7 +9,6 @@ export async function sendVerificationEmail(
 ): Promise<ApiResponse> {
     try {
         const emailContent = VerificationEmail({username, otp:verificationCode});
-        
         await resend.emails.send({
             from: 'onboarding@resend.dev',
             to: email,
