@@ -20,13 +20,21 @@ export default function Home() {
   return (
     <>
       <main className="flex-grow flex flex-col items-center justify-center px-4 md:px-24 py-12 bg-gray-800 text-white">
-        <section className="text-center mb-8 md:mb-12">
+      <section className="text-center mb-8 md:mb-12">
           <h1 className="text-3xl md:text-5xl font-bold">
-            Discover the power of anonymous feedback.
+            Make a Difference, Anonymously.
           </h1>
           <p className="mt-3 md:mt-4 text-base md:text-lg">
-            Send messages privately and anonymously.
+            Your feedback matters.
           </p>
+          <Button 
+            className="mt-8 bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-full shadow-lg transform transition duration-300 ease-in-out hover:scale-105"
+            size="lg"
+          >
+            <Link href="/login" className="flex items-center">
+              Join feedbacks.me
+            </Link>
+          </Button>
         </section>
 
         {/* Carousel for Messages */}
