@@ -23,7 +23,19 @@ export async function GET(request: Request) {
 
     const userId = new mongoose.Types.ObjectId(user._id);
     try {
-        const user = await UserModel.aggregate([
+        const user = await UserModel.findById(userId);
+        
+        if (!user) {
+            return Response.json(
+                {
+                    success: false,
+                    message: "User not found",
+                },
+                { status: 404 }
+            );
+        }
+
+        const result = await UserModel.aggregate([
             { $match: { _id: userId } },
             { $unwind: "$messages" },
             { $sort: { "messages.createdAt": -1 } },
@@ -35,20 +47,21 @@ export async function GET(request: Request) {
             },
         ]);
 
-        if(!user || user.length === 0){
+        if (result.length === 0 || !result[0].messages || result[0].messages.length === 0) {
             return Response.json(
                 {
-                    success: false,
-                    message: "User not found",
+                    success: true,
+                    message: "No messages found for this user",
+                    messages: [],
                 },
-                { status: 401 }
+                { status: 200 }
             );
         }
 
         return Response.json(
             {
                 success: true,
-                messages: user[0].messages,
+                messages: result[0].messages,
             },
             { status: 200 }
         );

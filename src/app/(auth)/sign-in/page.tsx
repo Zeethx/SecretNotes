@@ -38,18 +38,26 @@ function SignIn() {
             password: data.password
     })
 
-        if(result?.error) {
-            toast({
-                title: 'Login Failed',
-                description: "Invalid email or password",
-                variant: 'destructive'
-            });
-        } 
-
-        if(result?.url) {
-            router.push('/dashboard');
+    if (result?.error) {
+        if (result.error === 'CredentialsSignin') {
+          toast({
+            title: 'Login Failed',
+            description: 'Incorrect username or password',
+            variant: 'destructive',
+          });
+        } else {
+          toast({
+            title: 'Error',
+            description: result.error,
+            variant: 'destructive',
+          });
         }
-    }
+      }
+  
+      if (result?.url) {
+        router.replace('/dashboard');
+      }
+    };
 
     return (
         <div className="flex justify-center items-center min-h-screen bg-gray-100">

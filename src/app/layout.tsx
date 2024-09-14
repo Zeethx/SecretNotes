@@ -1,31 +1,28 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import { Toaster } from "@/components/ui/toaster"
-import  Navbar  from "@/components/Navbar"
-import AuthProvider from "@/context/AuthProvider";
-import './globals.css'
+import type { Metadata } from 'next';
+import { Inter } from 'next/font/google';
+import './globals.css';
+import AuthProvider from '../context/AuthProvider';
+import { Toaster } from '@/components/ui/toaster';
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: "Feedbacks.me",
-  description: "Send messages privately",
+  title: 'True Feedback',
+  description: 'Real feedback from real people.',
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
+interface RootLayoutProps {
   children: React.ReactNode;
-}>) {
+}
+
+export default async function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html lang="en">
+    <html lang="en" >
       <AuthProvider>
-      <body className={inter.className}>
-        <main>
+        <body className={inter.className}>
           {children}
-        </main>
-        <Toaster />
-      </body>
+          <Toaster />
+        </body>
       </AuthProvider>
     </html>
   );

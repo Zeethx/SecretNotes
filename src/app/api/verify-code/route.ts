@@ -21,12 +21,12 @@ export async function POST(request: Request) {
         }
 
         const isVerificationCodeValid = user.verificationCode === verificationCode;
-        const isVerificationCodeExpired = new Date(user.verificationCodeExpiry) < new Date();
+        const isVerificationCodeExpired = new Date(user.verificationCodeExpiry) > new Date();
 
-        if(isVerificationCodeValid && !isVerificationCodeExpired){
+        if(isVerificationCodeValid && isVerificationCodeExpired){
             user.verified = true;
             await user.save();
-
+            console.log("User verified successfully", user);
             return Response.json({
                 success: true,
                 message: "User verified successfully"
