@@ -1,6 +1,6 @@
-![Horizontal Feedbacks.me Logo](/public/logo-horizontal.png)
+![Horizontal SecretNotes Logo](/public/logo-horizontal.png)
 
-feedbacks.me is a user-friendly platform that enables users to send anonymous feedback on anything, anytime. Whether it's sharing thoughts on a product, service, experience, or even personal relationships, our app provides a safe and confidential space for honest communication.
+SecretNotes is a user-friendly platform that enables users to send anonymous feedback on anything, anytime. Whether it's sharing thoughts on a product, service, experience, or even personal relationships, our app provides a safe and confidential space for honest communication.
 
 ## Key Features
 
@@ -33,12 +33,12 @@ feedbacks.me is a user-friendly platform that enables users to send anonymous fe
 
 ## Getting Started
 
-To get started with feedbacks.me locally, follow these steps:
+To get started with SecretNotes locally, follow these steps:
 
 1. **Clone the repository**
    ```
-   git clone https://github.com/yourusername/feedbacks.me.git
-   cd feedbacks.me
+   git clone https://github.com/yourusername/SecretNotes.git
+   cd SecretNotes
    ```
 
 2. **Install dependencies**
@@ -65,15 +65,15 @@ To get started with feedbacks.me locally, follow these steps:
 
 ## Privacy and Security
 
-We take user privacy seriously. All feedback is handled with utmost confidentiality. For more details, please see our [Privacy Policy](https://feedbacks.me/privacy).
+We take user privacy seriously. All feedback is handled with utmost confidentiality. For more details, please see our [Privacy Policy](https://SecretNotes/privacy).
 
 ## Support
 
-For support, please email support@feedbacks.me or visit our [Help Center](https://help.feedbacks.me).
+For support, please email support@SecretNotes or visit our [Help Center](https://help.SecretNotes).
 
 ## Contributing
 
-We welcome contributions! If you'd like to contribute to feedbacks.me, please follow these steps:
+We welcome contributions! If you'd like to contribute to SecretNotes, please follow these steps:
 
 1. Fork the repository
 2. Create a new branch for your feature or bug fix
@@ -83,8 +83,8 @@ We welcome contributions! If you'd like to contribute to feedbacks.me, please fo
 
 Please ensure your code adheres to our coding standards and includes appropriate tests. For major changes, please open an issue first to discuss what you would like to change.
 
-Don't forget to update the documentation as necessary. Thank you for helping improve feedbacks.me!
+Don't forget to update the documentation as necessary. Thank you for helping improve SecretNotes!
 
 ## License
 
-feedbacks.me is licensed under the MIT License. See the [LICENSE](LICENSE) file for more information.
+SecretNotes is licensed under the MIT License. See the [LICENSE](LICENSE) file for more information.

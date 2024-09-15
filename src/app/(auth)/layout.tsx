@@ -1,8 +1,8 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Authentication - feedbacks.me',
-  description: 'Authentication pages for feedbacks.me',
+  title: 'Authentication - SecretNotes',
+  description: 'Authentication pages for SecretNotes',
 }
 
 export default function AuthLayout({

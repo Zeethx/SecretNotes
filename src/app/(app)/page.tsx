@@ -32,7 +32,7 @@ export default function Home() {
             size="lg"
           >
             <Link href="/login" className="flex items-center">
-              Join feedbacks.me
+              Join SecretNotes
             </Link>
           </Button>
         </section>
@@ -67,7 +67,7 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="text-center p-4 md:p-6 bg-gray-900 text-white">
-        © 2024 feedbacks.me | All rights reserved.
+        © 2024 SecretNotes | All rights reserved.
       </footer>
     </>
   );

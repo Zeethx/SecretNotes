@@ -12,7 +12,7 @@ export async function sendVerificationEmail(
         const sendMail = await resend.emails.send({
             from: 'onboarding@resend.dev',
             to: email,
-            subject: 'Feedbacks.me | Verify your email',
+            subject: 'SecretNotes | Verify your email',
             react: emailContent,
         });
         
