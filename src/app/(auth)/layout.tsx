@@ -1,3 +1,4 @@
+import Navbar from '@/components/Navbar'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -12,6 +13,7 @@ export default function AuthLayout({
 }) {
   return (
     <div className="auth-layout">
+      <Navbar />
       {children}
     </div>
   )

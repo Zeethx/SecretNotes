@@ -1,6 +1,7 @@
 'use client'
 
 import { useForm } from "react-hook-form";
+import { Merienda } from 'next/font/google';
 import * as z from "zod";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -15,6 +16,9 @@ import { Button } from "@/components/ui/button";
 import { Loader2 } from "lucide-react";
 import { loginSchema } from "@/schemas/loginSchema";
 import { signIn } from "next-auth/react";
+
+const merienda = Merienda({ subsets: ['latin'] });
+
 
 function SignIn() {
     const [isSubmitting, setIsSubmitting] = useState(false);
@@ -64,7 +68,7 @@ function SignIn() {
         <div className="flex justify-center items-center min-h-screen bg-gray-100">
             <div className="w-full max-w-md p-8 space-y-8 bg-white rounded-lg shadow-md">
                 <div className="text-center">
-                    <h1 className="text-5xl font-bold text-gray-800">SecretNotes</h1>
+                    <h1 className={`text-5xl font-bold text-gray-800 ${merienda.className}`}>SecretNotes</h1>
                     <p className="text-gray-500 mt-2">Login to get started</p>
                 </div>
                 <Form {...form}>
