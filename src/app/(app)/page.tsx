@@ -22,14 +22,21 @@ import {
 export default function Home() {
     return (
         <>
-            <main className="flex-grow flex flex-col items-center justify-center px-4 md:px-24 py-12 bg-gray-800 text-white">
+            <main className="flex-grow flex flex-col items-center justify-center px-4 md:px-24 py-12 text-white bg-gray-800">
                 <section className="text-center mb-8 md:mb-12">
-                    <h1 className="text-4xl md:text-6xl font-bold leading-tight">
-                        Make a Difference,{" "}
-                        <span className="text-[#7dbff8]">Anonymously</span>
+                  <p className="text-xl">Make a difference,</p>
+                    <h1 className="text-4xl md:text-6xl font-bold leading-tight z-100">
+                      Anonymously
                     </h1>
+                    <div className="w-[40rem] h-2 relative">
+                    {/* Gradients */}
+                    <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-[2px] w-3/4 blur-sm" />
+                    <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-px w-3/4" />
+                    <div className="absolute inset-x-60 top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-[5px] w-1/4 blur-sm" />
+                    <div className="absolute inset-x-60 top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-px w-1/4" />
+                    </div>
                     <Button
-                        className="mt-8 bg-blue-400 hover:bg-blue-500 text-white font-bold py-8 text-xl px-12 rounded-full shadow-lg transform transition duration-300 ease-in-out hover:scale-105"
+                        className="mt-12 bg-blue-400 hover:bg-blue-500 text-white font-bold py-8 text-xl px-12 rounded-full shadow-lg transform transition duration-300 ease-in-out hover:scale-105"
                         size="lg"
                     >
                         <Link href="/sign-in" className="flex items-center">

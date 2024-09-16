@@ -15,6 +15,7 @@ import { RefreshCcw } from 'lucide-react'
 import { MessageCard } from '@/components/MessageCard'
 import { Separator } from '@/components/ui/separator'
 import { Switch } from '@/components/ui/switch'
+import Loader  from '@/components/Loader'
 
 
 
@@ -127,8 +128,8 @@ function Dashboard() {
 
     if (!session || !session.user) {
         return (
-            <div>
-                <div>You need to be logged in to view this page</div>
+            <div className="flex items-center justify-center h-screen">
+                <Loader />
             </div>
         )
     }
