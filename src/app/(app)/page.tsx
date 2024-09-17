@@ -35,14 +35,14 @@ export default function Home() {
                     <div className="absolute inset-x-60 top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-[5px] w-1/4 blur-sm" />
                     <div className="absolute inset-x-60 top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-px w-1/4" />
                     </div>
-                    {/* <Button
+                    <Button
                         className="mt-12 bg-blue-400 hover:bg-blue-500 text-white font-bold py-8 text-xl px-12 rounded-full shadow-lg transform transition duration-300 ease-in-out hover:scale-105"
                         size="lg"
                     >
                         <Link href="/sign-in" className="flex items-center">
                             <span className={`ml-2 ${merienda.className}`}>Join SecretNotes</span>
                         </Link>
-                    </Button> */}
+                    </Button>
                 </section>
 
                 {/* Carousel for Messages */}
