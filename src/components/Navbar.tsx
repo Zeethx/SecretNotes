@@ -6,12 +6,16 @@ import { useSession, signOut } from "next-auth/react";
 import { Button } from "./ui/button";
 import { User } from "next-auth";
 
-function Navbar() {
+interface NavbarProps {
+  className?: string;
+}
+
+const Navbar: React.FC<NavbarProps> = ({ className }) => {
   const { data: session } = useSession();
   const user: User = session?.user as User;
 
   return (
-    <nav className="p-4 md:p-6 shadow-md bg-gray-900 text-white fixed w-full h-18">
+    <nav className={`${className ? className : "p-4 md:p-6 shadow-md bg-gray-900 text-white fixed w-full h-18 z-20"}`}>
       <div className="container mx-auto flex flex-col md:flex-row justify-between items-center">
         <a href="/dashboard" className="text-xl font-bold mb-4 md:mb-0">
           <img src="/logo-horizontal.png" alt="SecretNotes" className="w-30 h-10" />
