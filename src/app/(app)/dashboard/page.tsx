@@ -135,9 +135,9 @@ export default function Dashboard() {
   }
 
   return (
-    <>
+    <div className="min-h-screen bg-gradient-to-b from-black to-gray-900">
       <Navbar />
-      <div className="bg-gradient-to-b from-black to-gray-900 flex items-center justify-center pt-8 px-4">
+      <div className="flex justify-center px-4 pt-8">
         <div className="max-w-6xl w-full bg-gray-900 bg-opacity-40 rounded-lg shadow-lg p-8 text-white">
           <h1 className="text-4xl font-bold mb-6 text-center">User Dashboard</h1>
           <div className="mb-6">
@@ -202,6 +202,6 @@ export default function Dashboard() {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }

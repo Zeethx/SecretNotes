@@ -1,17 +1,27 @@
 [
-    {
-      "title": "Message from User123",
-      "content": "Hey, how are you doing today?",
-      "received": "10 minutes ago"
-    },
-    {
-      "title": "Message from SecretAdmirer",
-      "content": "I really liked your recent post!",
-      "received": "2 hours ago"
-    },
-    {
-      "title": "Message from MysteryGuest",
-      "content": "Do you have any book recommendations?",
-      "received": "1 day ago"
-    }
-  ]
+  {
+    "title": "Message from GrowthSeeker",
+    "content": "How do you stay motivated during tough times?",
+    "received": "15 minutes ago"
+  },
+  {
+    "title": "Message from MindfulLearner",
+    "content": "What are your top strategies for staying organized?",
+    "received": "30 minutes ago"
+  },
+  {
+    "title": "Message from InspiredReader",
+    "content": "Any book or course recommendations for growth?",
+    "received": "3 hours ago"
+  },
+  {
+    "title": "Message from CareerExplorer",
+    "content": "How do you balance work, learning, and life?",
+    "received": "5 hours ago"
+  },
+  {
+    "title": "Message from GoalSetter",
+    "content": "What system do you use for long-term goal tracking?",
+    "received": "1 day ago"
+  }
+]

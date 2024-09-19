@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import { useForm } from "react-hook-form";
 import { Merienda } from 'next/font/google';
@@ -16,10 +16,11 @@ import { Form, FormLabel, FormMessage, FormField, FormItem, FormControl } from "
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Loader2 } from "lucide-react";
+import Navbar from "@/components/Navbar";
 
 const merienda = Merienda({ subsets: ['latin'] });
 
-function Page() {
+function SignUp() {
     const [username, setUsername] = useState("");
     const [usernameMessage, setUsernameMessage] = useState("");
     const [isCheckingUsername, setIsCheckingUsername] = useState(false);
@@ -97,11 +98,13 @@ function Page() {
     }
 
     return (
-        <div className="flex justify-center items-center min-h-screen bg-gray-100 pt-32 sm:pt-16">
-            <div className="w-full max-w-md p-8 space-y-8 bg-white rounded-lg shadow-md">
+        <div className="min-h-screen">
+            <Navbar />
+        <div className="flex justify-center items-center pt-4 text-white">
+            <div className="w-full max-w-md p-8 space-y-8 bg-gray-900 bg-opacity-50 backdrop-blur-md rounded-lg shadow-xl border border-gray-700">
                 <div className="text-center">
-                <h1 className={`text-5xl font-bold text-gray-800 ${merienda.className}`}>SecretNotes</h1>
-                    <p className="text-gray-500 mt-2">Sign up to get started</p>
+                    <h1 className={`text-5xl font-bold text-white ${merienda.className}`}>SecretNotes</h1>
+                    <p className="text-gray-300 mt-2">Sign up to get started</p>
                 </div>
                 <Form {...form}>
                     <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
@@ -112,14 +115,17 @@ function Page() {
                                 <FormItem>
                                     <FormLabel>Username</FormLabel>
                                     <FormControl>
-                                        <Input placeholder="SillyTuscan28" {...field}
+                                        <Input 
+                                            className="bg-gray-800 text-white border-gray-600"
+                                            placeholder="SillyTuscan28" 
+                                            {...field}
                                             onChange={(e) => {
                                                 field.onChange(e);
                                                 debounced(e.target.value);
                                             }}
                                         />
                                     </FormControl>
-                                    {isCheckingUsername && <Loader2 className="animate-spin" />}
+                                    {isCheckingUsername && <Loader2 className="animate-spin text-white" />}
                                     <p className={`text-sm ${usernameMessage === "Username is available" ? 'text-green-500' : 'text-red-500'}`}>
                                         {' '}{usernameMessage}
                                     </p>
@@ -134,7 +140,11 @@ function Page() {
                                 <FormItem>
                                     <FormLabel>Email</FormLabel>
                                     <FormControl>
-                                        <Input placeholder="sillybilly@zoo.com" {...field} />
+                                        <Input 
+                                            className="bg-gray-800 text-white border-gray-600"
+                                            placeholder="sillybilly@zoo.com" 
+                                            {...field} 
+                                        />
                                     </FormControl>
                                     <FormMessage />
                                 </FormItem>
@@ -147,36 +157,44 @@ function Page() {
                                 <FormItem>
                                     <FormLabel>Password</FormLabel>
                                     <FormControl>
-                                        <Input type="password" placeholder="********" {...field} />
+                                        <Input 
+                                            className="bg-gray-800 text-white border-gray-600"
+                                            type="password" 
+                                            placeholder="********" 
+                                            {...field} 
+                                        />
                                     </FormControl>
                                     <FormMessage />
                                 </FormItem>
                             )}
                         />
                         <div className="flex justify-center items-center">
-                            <Button type="submit" disabled={isSubmitting} className="items-center">
-                                {
-                                    isSubmitting ? (
-                                        <>
-                                            <Loader2 className="mr-2 h-4 w-4 animate-spin" /> Please wait...
-                                        </>
-                                    ) : ('Sign Up')
-                                }
+                            <Button 
+                                type="submit" 
+                                disabled={isSubmitting} 
+                                className="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-md transition duration-200">
+                                {isSubmitting ? (
+                                    <>
+                                        <Loader2 className="mr-2 h-4 w-4 animate-spin text-white" /> 
+                                        Please wait...
+                                    </>
+                                ) : ('Sign Up')}
                             </Button>
                         </div>
                     </form>
                 </Form>
                 <div className="text-center mt-4">
-                    <p>
+                    <p className="text-gray-400">
                         Already a user?{" "}
-                        <Link href="/sign-in" className="text-blue-600 hover:text-blue-800">
+                        <Link href="/sign-in" className="text-blue-400 hover:text-blue-600 transition duration-200">
                             Login
                         </Link>
                     </p>
                 </div>
             </div>
         </div>
+        </div>
     );
 }
 
-export default Page;
+export default SignUp;
