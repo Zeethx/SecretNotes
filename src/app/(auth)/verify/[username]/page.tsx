@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import React from "react";
 import { useRouter, useParams } from "next/navigation";
 import { useToast } from "@/components/ui/use-toast";
@@ -20,7 +20,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import Navbar from "@/components/Navbar";
 
-function verifyAccount() {
+function VerifyAccount() {
     const router = useRouter();
     const params = useParams<{ username: string }>();
     const { toast } = useToast();
@@ -104,4 +104,4 @@ function verifyAccount() {
     );
 }
 
-export default verifyAccount;
+export default VerifyAccount;
