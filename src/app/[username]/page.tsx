@@ -2,10 +2,11 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { useForm, SubmitHandler } from "react-hook-form";
-import axios from "axios";
+import axios, { AxiosError } from "axios";
 import { useToast } from "@/components/ui/use-toast";
 import Link from "next/link";
 import { Merienda } from "next/font/google";
+import { ApiResponse } from "@/types/ApiResponse";
 
 type FormData = {
     message: string;
@@ -28,25 +29,34 @@ export default function Home({ params }: PageProps) {
     const { toast } = useToast();
 
     const onSubmit: SubmitHandler<FormData> = async (data) => {
+      try {
         const response = await axios.post("/api/send-message", {
-            username,
-            content: data.message,
+          username,
+          content: data.message,
+      });
+      if (response.data.success) {
+        toast({
+            title: "Success",
+            description: "Message sent successfully",
+            variant: "default",
         });
+        reset();
+    } else {
+        toast({
+            title: "Error",
+            description: response.data.message,
+            variant: "destructive",
+        });
+    }
+      } catch (error) {
+        const axiosError = error as AxiosError<ApiResponse>;
+        toast({
+            title: "Error",
+            description: axiosError.response?.data.message || "Failed to send message",
+            variant: "destructive",
+        });
+      }
 
-        if (response.data.success) {
-            toast({
-                title: "Success",
-                description: "Message sent successfully",
-                variant: "default",
-            });
-            reset();
-        } else {
-            toast({
-                title: "Error",
-                description: response.data.message,
-                variant: "destructive",
-            });
-        }
     };
 
     return (

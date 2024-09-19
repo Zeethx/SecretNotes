@@ -69,7 +69,7 @@ export default function Home() {
                             size="lg"
                         >
                             <Link
-                                href="/create-profile"
+                                href="/sign-up"
                                 className="flex items-center"
                             >
                                 <span
