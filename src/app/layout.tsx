@@ -19,7 +19,7 @@ export default async function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en" >
       <AuthProvider>
-        <body className={`${urbanist.className}`}>
+        <body className={`${urbanist.className} bg-gradient-to-b from-black to-gray-900`}>
           {children}
           <Toaster />
         </body>

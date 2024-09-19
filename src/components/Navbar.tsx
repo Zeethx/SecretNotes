@@ -15,14 +15,14 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
   const user: User = session?.user as User;
 
   return (
-    <nav className={`${className ? className : "p-4 md:p-6 shadow-md bg-gray-900 text-white fixed w-full h-18 z-20"}`}>
+    <nav className={`${className ? className : "p-4 md:p-6 shadow-md text-white relative w-full h-18 z-20"}`}>
       <div className="container mx-auto flex flex-col md:flex-row justify-between items-center">
         <a href="/dashboard" className="text-xl font-bold mb-4 md:mb-0">
           <img src="/logo-horizontal.png" alt="SecretNotes" className="w-30 h-10" />
         </a>
         {user ? (
           <>
-            <span className="mr-4 text-lg">Welcome, {user.username || user.email}</span>
+            <p className="mr-4 text-lg">Welcome, <span className="text-purple-500">{user.username || user.email}</span></p>
             <Button
               onClick={() => signOut()}
               className="w-full md:w-auto bg-slate-100 text-black"

@@ -12,7 +12,7 @@ export default function AuthLayout({
   children: React.ReactNode
 }) {
   return (
-    <div className="auth-layout">
+    <div className="auth-layout bg-gradient-to-b from-black to-gray-900">
       <Navbar />
       {children}
     </div>
